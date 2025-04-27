@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title  {  
+  padding-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.music-title  {  
+  padding-top: 70px;  
+  text-align: center;
+}
+.pad{
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  /* display: flex; */
+  /* flex: 33.33%; */
+  padding: 2px;
+  float: left;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.header-area .egames-main-menu .classy-navbar .classynav ul li a:hover {
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 16px;
+  padding: 0 10px;
+  color: rgb(0, 162, 255)!important; 
+}
+
+.footer-area {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(12 12 12);
+  border-top: 1px solid rgb(0 0 0);
+  background-repeat: repeat;
+}
+
+.footer-area .copywrite-content {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 15px 0 0;
+}
+.footer-area .copywrite-content .copywrite-text a {
+  color: rgb(102 102 102);
+  font-size: 12px;
+  font-weight: 400;
+}

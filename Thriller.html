@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="thriller.css">
+    
+</head>
+
+<body>
+    <?php require_once('includes/navbar.php'); ?>
+    <!-- English Section songs -->
+    <h1 style="text-align: center;">English</h1>
+
+    <div>
+        <?php
+        $conn = mysqli_connect('localhost', 'Aakash', 'root', 'audiolibdb');
+        $query = "Select * from audios where Genre='English'";
+        $data = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_assoc($data)) {
+            $sname = $row['song'];
+            $artist = $row['artist'];
+            $img = $row['image'];
+
+        ?>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="<?php echo $img ?>" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>
+                        <?php echo $sname ?>
+                    </h1>
+                    <p>
+                        <?php echo $artist ?>
+                    </p>
+                    <p>We love that guy</p>
+                    <a href="player.php?s_id=<?= $row['id'] ?>"><i class="fa fa-play fa-3x"
+                            style="text-decoration:none;color:white;"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+        <?php
+    }
+    ?>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- End Section English -->
+
+    <!-- Hindi Section songs -->
+    <h1 style="text-align: center;">Hindi</h1>
+
+    <div>
+        <?php
+         $conn = mysqli_connect('localhost', 'Aakash', 'root', 'audiolibdb');
+         $query = "Select * from audios where Genre='Hindi'";
+         $data = mysqli_query($conn, $query);
+         while ($row = mysqli_fetch_assoc($data)) {
+             $sname = $row['song'];
+             $artist = $row['artist'];
+             $img = $row['image'];
+ 
+         ?>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="<?php echo $img ?>" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>
+                        <?php echo $sname ?>
+                    </h1>
+                    <p>
+                        <?php echo $artist ?>
+                    </p>
+                    <p>We love that guy</p>
+                    <a href="player.php?s_id=<?= $row['id'] ?>"><i class="fa fa-play fa-3x"
+                            style="text-decoration:none;color:white;"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+        <?php
+     }
+     ?>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- End Section hindi -->
+
+    <!-- old Section songs -->
+    <h1 style="text-align: center;">oldies</h1>
+
+    <div>
+        <?php
+             $conn = mysqli_connect('localhost', 'Aakash', 'root', 'audiolibdb');
+             $query = "Select * from audios where Genre='Hindi'";
+             $data = mysqli_query($conn, $query);
+             while ($row = mysqli_fetch_assoc($data)) {
+                 $sname = $row['song'];
+                 $artist = $row['artist'];
+                 $img = $row['image'];
+     
+             ?>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="<?php echo $img ?>" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>
+                        <?php echo $sname ?>
+                    </h1>
+                    <p>
+                        <?php echo $artist ?>
+                    </p>
+                    <p>We love that guy</p>
+                    <a href="player.php?s_id=<?= $row['id'] ?>"><i class="fa fa-play fa-3x"
+                            style="text-decoration:none;color:white;"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+        <?php
+         }
+         ?>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- End Section oldies -->
+
+</body>
+
+</html>
